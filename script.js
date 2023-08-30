@@ -26,9 +26,9 @@ let upgrade1mpc = 1;
 let upgrade1Amount = 0;
 
 function upgrade1() { 
-  if (moneys >= upgrade1Cost) {
+  if (moneys >= upgrade1Cost && upgrade1Amount <= 10) {
     mpc += upgrade1mpc;
-    upgrade1mpc *=1.2;
+    upgrade1mpc *= 1.2;
     moneys -= upgrade1Cost;
     upgrade1Cost *= 1.5;
     upgrade1Amount += 1;
@@ -36,6 +36,9 @@ function upgrade1() {
     upgrade1Cost = Math.round(10*upgrade1Cost)/10;
     upgrade1mpc = Math.round(10*upgrade1mpc)/10;
     mpc = Math.round(10*mpc)/10;
+    if (upgrade1Amount == 10) {
+      mpc *= 2
+    }
     document.getElementById("upgrade1Cost").innerHTML = upgrade1Cost;
     document.getElementById("moneyYouHave").innerHTML = moneys;
     document.getElementById("upgrade1mpc").innerHTML = upgrade1mpc;
