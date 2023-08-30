@@ -71,6 +71,20 @@ function upgrade2() {
   }
 }
 
+let upgrade1lvl2Cost = 10,000;
+let upgrade1lvl2Amount = 0;
+
+function upgrade1lvl2() {
+  if (moneys >= upgrade1lvl2Cost && upgrade1lvl2Amount < 10) {
+    mpc *= 2;
+    upgrade1lvl2Cost *= 1.8;
+    document.getElementById("upgrade1lvl2Cost").innerHTML = upgrade1Cost;
+    document.getElementById("moneyYouHave").innerHTML = moneys;
+    document.getElementById("mpc").innerHTML = mpc;
+    document.getElementById("upgrade1lvl2Amount").innerHTML = upgrade1lvl2Amount;
+  }
+}
+
 function save() {
   localStorage.setItem('storageMoney', moneys)
   localStorage.setItem('storageMPS', mps)
