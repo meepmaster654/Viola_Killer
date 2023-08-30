@@ -21,24 +21,33 @@ function moneyPerSecond(){
   document.getElementById("moneyYouHave").innerHTML = moneys; // displays how much money you have
 }
 
+//Set variables for upgrade1
 let upgrade1Cost = 100;
 let upgrade1mpc = 1;
 let upgrade1Amount = 0;
 
+//upgrade1 funcition
 function upgrade1() { 
+  //makes sure that upgrade is affordable and is not maxed out
   if (moneys >= upgrade1Cost && upgrade1Amount < 10) {
+    //adds more to your money per click(mpc)
     mpc += upgrade1mpc;
     upgrade1mpc *= 1.2;
+    //subtracts money from total
     moneys -= upgrade1Cost;
     upgrade1Cost *= 1.5;
+    //shows that you got the upgrade
     upgrade1Amount += 1;
+    //round all of your money
     moneys = Math.round(100*moneys)/100;
     upgrade1Cost = Math.round(10*upgrade1Cost)/10;
     upgrade1mpc = Math.round(10*upgrade1mpc)/10;
     mpc = Math.round(10*mpc)/10;
+    //max multipliar
     if (upgrade1Amount == 10) {
       mpc *= 2;
     }
+    //update the HTML
     document.getElementById("upgrade1Cost").innerHTML = upgrade1Cost;
     document.getElementById("moneyYouHave").innerHTML = moneys;
     document.getElementById("upgrade1mpc").innerHTML = upgrade1mpc;
@@ -47,13 +56,19 @@ function upgrade1() {
   }
 }
 
+//sets upgrade 2 variables
 let upgrade2Cost = 100;
 let upgrade2mps = 1;
 let upgrade2Amount = 0;
+
+//upgrade 2 function
 function upgrade2() {
+  //makes sure you can afford the upgrade and that it is not maxed
   if (moneys >= upgrade2Cost && upgrade2Amount < 10) {
+    //subtracts cost from your money & multiplys the cost
     moneys -= upgrade2Cost;
-    upgrade2Cost *= 1.5;
+    upgrade2Cost *= 1.5
+    //add the upgrade to your money per second
     mps += upgrade2mps;
     upgrade2mps *= 1.4;
     upgrade2Amount += 1;
