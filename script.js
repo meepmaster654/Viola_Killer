@@ -75,9 +75,14 @@ let upgrade1lvl2Cost = 10,000;
 let upgrade1lvl2Amount = 0;
 
 function upgrade1lvl2() {
-  if (moneys >= upgrade1lvl2Cost && upgrade1lvl2Amount < 10) {
-    mpc *= 2;
-    upgrade1lvl2Cost *= 1.8;
+  if (moneys >= upgrade1lvl2Cost && upgrade1lvl2Amount < 10 && upgade1Amount >= 10) {
+    mpc *= 1.5;
+    upgrade1lvl2Cost *= 1.3;
+    moneys - upgrade1lvl2Cost;
+    upgrade1lvl2Amount += 1;
+    if (upgrade2amount == 10) {
+      mps *=3;
+    }
     document.getElementById("upgrade1lvl2Cost").innerHTML = upgrade1Cost;
     document.getElementById("moneyYouHave").innerHTML = moneys;
     document.getElementById("mpc").innerHTML = mpc;
