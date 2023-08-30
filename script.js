@@ -80,7 +80,7 @@ function upgrade1lvl2() {
     upgrade1lvl2Cost *= 1.3;
     moneys - upgrade1lvl2Cost;
     upgrade1lvl2Amount += 1;
-    if (upgrade2amount == 10) {
+    if (upgrade1lvl2Amount == 10) {
       mps *=3;
     }
     document.getElementById("upgrade1lvl2Cost").innerHTML = upgrade1Cost;
