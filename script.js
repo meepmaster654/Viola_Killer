@@ -86,4 +86,21 @@ function upgrade2() {
   };
 };
 
+let upgrade1L2Cost = 10000;
+let upgrade1L2Amount = 0;
+
+function upgrade1L2() {
+  if (moneys >=  upgrade1L2Cost && upgrade1Amount >= 10) {
+    mpc *= 1.5;
+    moneys -= upgrade1L2Cost;
+    upgrade1L2Cost *= 1.4;
+    upgrade1L2Amount += 1;
+    moneys = Math.round(100*moneys)/100;
+    document.getElementById("mpc").innerHTML = mpc;
+    document.getElementById("moneyYouHave").innerHTML = moneys;
+    document.getElementById("upgrade1L2Cost").innerHTML = upgrade1L2Cost;
+    document.getElementById("upgrade1L2Amount").innerHTML = upgrade1L2Amount;
+  };
+};
+
 
