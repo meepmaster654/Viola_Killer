@@ -21,6 +21,13 @@ body {
   padding: 0px;
 }
 
+.prestige {
+  padding:0px 10px;
+  background-color: #ffb0ee;
+  border: 20px inset #4a86e8;
+  margin: 0 0 10px 0;
+}
+
 #localSave {
   padding:0px 10px;
   background-color: #ff6868;
