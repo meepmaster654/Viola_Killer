@@ -32,9 +32,11 @@ let upgrade1Amount = 0;
 function upgrade1() { 
   //makes sure that upgrade is affordable and is not maxed out
   if (moneys >= upgrade1Cost && upgrade1Amount < 10) {
+    upgrade1Amount += 1;
     //adds more to your money per click(mpc)
+    upgrade1mpc = upgrade1Amount+1*1.2^upgrade1Amount;
     mpc += upgrade1mpc;
-    upgrade1mpc *= 1.2;
+    upgrade1mpc = upgrade1Amount+1*1.2^upgrade1Amount;
     //subtracts money from total
     moneys -= upgrade1Cost;
     upgrade1Cost *= 1.5;
@@ -52,7 +54,7 @@ function upgrade1() {
     //update the HTML
     document.getElementById("upgrade1Cost").innerHTML = upgrade1Cost;
     document.getElementById("moneyYouHave").innerHTML = moneys;
-    document.getElementById("upgrade1mpc").innerHTML = upgrade1mpc;
+    document.getElementById("upgrade1mpc").innerHTML = (upgrade1Amount+1)+1*1.2^(upgrade1Amount+1);
     document.getElementById("mpc").innerHTML = mpc;
     document.getElementById("upgrade1Amount").innerHTML = upgrade1Amount;
   };
@@ -127,8 +129,11 @@ function upgrade2L2() {
 };
 
 function prestige() {
-  if (upgrade2L2Amount >= 10 && upgrade1L1Amount >=10) {
+  if (upgrade2L2Amount >= upgradeMax && upgrade1L1Amount >= upgradeMax) {
     prestigeMultipliar *= 2;
     upgradeMax *= 2;
+    mpc = 1;
+    upgrade1Amount = moneys = mps = upgrade2Amount = upgrade1L2Amount = upgrade2L2 = 0;
+    
   };
 };
