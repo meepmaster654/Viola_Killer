@@ -96,6 +96,8 @@ function upgrade1L2() {
     upgrade1L2Cost *= 1.4;
     upgrade1L2Amount += 1;
     moneys = Math.round(100*moneys)/100;
+    mpc = Math.round(10*mpc)/10;
+    upgrade1L2Cost = Math.round(10*upgrade1L2Cost)/10;
     document.getElementById("mpc").innerHTML = mpc;
     document.getElementById("moneyYouHave").innerHTML = moneys;
     document.getElementById("upgrade1L2Cost").innerHTML = upgrade1L2Cost;
@@ -103,4 +105,22 @@ function upgrade1L2() {
   };
 };
 
+let upgrade2L2Cost = 10000;
+let upgrade2L2Amount = 0;
+
+function upgrade2L2() {
+  if (moneys >= upgrade1L2Cost && upgrade2Amount >=10) {
+    mps *= 1.5;
+    moneys -= upgrade2L2Cost;
+    upgrade2L2Cost *= 1.4;
+    upgrade2L2Amount +=1;
+    moneys = Math.round(100*moneys)/100;
+    mps = Math.round(10*mps)/10;
+    upgrade2L2Cost = Math.round(10*upgrade2L2Cost)/10;
+    document.getElementById("mps").innerHTML = mps;
+    document.getElementById("moneyYouHave").innerHTML = moneys;
+    document.getElementById("upgrade2L2Cost").innerHTML = upgrade2L2Cost;
+    document.getElementById("upgrade2L2Amount").innerHTML = upgrade2L2Amount;
+  };
+};
 
