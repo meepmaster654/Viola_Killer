@@ -1,5 +1,7 @@
 let moneys = 0; //sets money to 0
 let mpc = 1; //sets mps to 1
+let prestigeMultipliar = 1;
+let upgradeMax = 10;
 function clicked() {
   moneys += mpc; //adds money per click to money
    moneys = Math.round(10*moneys)/10; //rounds money to the nearest 10th
@@ -124,3 +126,9 @@ function upgrade2L2() {
   };
 };
 
+function prestige() {
+  if (upgrade2L2Amount >= 10 && upgrade1L1Amount >=10) {
+    prestigeMultipliar *= 2;
+    upgradeMax *= 2;
+  };
+};
