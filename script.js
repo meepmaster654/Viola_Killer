@@ -34,9 +34,8 @@ function upgrade1() {
   if (moneys >= upgrade1Cost && upgrade1Amount < 10) {
     upgrade1Amount += 1;
     //adds more to your money per click(mpc)
-    upgrade1mpc = upgrade1Amount+1*1.2^upgrade1Amount;
+    upgrade1mpc = upgrade1Amount+(1*1.2^upgrade1Amount);
     mpc += upgrade1mpc;
-    upgrade1mpc = upgrade1Amount+1*1.2^upgrade1Amount;
     //subtracts money from total
     moneys -= upgrade1Cost;
     upgrade1Cost *= 1.5;
@@ -54,7 +53,7 @@ function upgrade1() {
     //update the HTML
     document.getElementById("upgrade1Cost").innerHTML = upgrade1Cost;
     document.getElementById("moneyYouHave").innerHTML = moneys;
-    document.getElementById("upgrade1mpc").innerHTML = (upgrade1Amount+1)+1*1.2^(upgrade1Amount+1);
+    document.getElementById("upgrade1mpc").innerHTML = (upgrade1Amount+1)+(1*1.2^(upgrade1Amount+1));
     document.getElementById("mpc").innerHTML = mpc;
     document.getElementById("upgrade1Amount").innerHTML = upgrade1Amount;
   };
