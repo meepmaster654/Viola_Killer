@@ -25,7 +25,6 @@ function moneyPerSecond(){
 
 //Set variables for upgrade1
 let upgrade1Cost = 100;
-let upgrade1mpc = 1;
 let upgrade1Amount = 0;
 
 //upgrade1 funcition
@@ -34,12 +33,11 @@ function upgrade1() {
   if (moneys >= upgrade1Cost && upgrade1Amount < 10) {
     upgrade1Amount += 1;
     //adds more to your money per click(mpc)
-    upgrade1mpc = 1*1.2^upgrade1Amount;
     //subtracts money from total
     moneys -= upgrade1Cost;
     upgrade1Cost *= 1.5;
     //shows that you got the upgrade
-    mpc += upgrade1mpc;
+    mpc += 1*1.2^upgrade1Amount;
     //round all of your money
     moneys = Math.round(100*moneys)/100;
     upgrade1Cost = Math.round(100*upgrade1Cost)/100;
