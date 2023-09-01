@@ -35,7 +35,6 @@ function upgrade1() {
     upgrade1Amount += 1;
     //adds more to your money per click(mpc)
     upgrade1mpc = 1*1.2^upgrade1Amount;
-    mpc += upgrade1mpc;
     //subtracts money from total
     moneys -= upgrade1Cost;
     upgrade1Cost *= 1.5;
@@ -43,9 +42,8 @@ function upgrade1() {
     mpc += upgrade1mpc;
     //round all of your money
     moneys = Math.round(100*moneys)/100;
-    upgrade1Cost = Math.round(10*upgrade1Cost)/10;
-    upgrade1mpc = Math.round(10*upgrade1mpc)/10;
-    mpc = Math.round(10*mpc)/10;
+    upgrade1Cost = Math.round(100*upgrade1Cost)/100;
+    mpc = Math.round(100*mpc)/100;
     //max multipliar
     if (upgrade1Amount == 10) {
       mpc *= 2;
