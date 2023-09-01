@@ -37,7 +37,7 @@ function upgrade1() {
     moneys -= upgrade1Cost;
     upgrade1Cost *= 1.5;
     //shows that you got the upgrade
-    mpc = mpc+(1*1.2^upgrade1Amount);
+    mpc += 1*1.2**upgrade1Amount);
     //round all of your money
     moneys = Math.round(100*moneys)/100;
     upgrade1Cost = Math.round(100*upgrade1Cost)/100;
@@ -49,7 +49,7 @@ function upgrade1() {
     //update the HTML
     document.getElementById("upgrade1Cost").innerHTML = upgrade1Cost;
     document.getElementById("moneyYouHave").innerHTML = moneys;
-    document.getElementById("upgrade1mpc").innerHTML = 1.2^(upgrade1Amount+1);
+    document.getElementById("upgrade1mpc").innerHTML = 1.2**(upgrade1Amount+1);
     document.getElementById("mpc").innerHTML = mpc;
     document.getElementById("upgrade1Amount").innerHTML = upgrade1Amount;
   };
