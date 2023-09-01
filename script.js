@@ -38,10 +38,6 @@ function upgrade1() {
     upgrade1Cost *= 1.5;
     //shows that you got the upgrade
     mpc += 1*1.2**upgrade1Amount;
-    //round all of your money
-    moneys = Math.round(100*moneys)/100;
-    upgrade1Cost = Math.round(100*upgrade1Cost)/100;
-    mpc = Math.round(100*mpc)/100;
     //max multipliar
     if (upgrade1Amount == 10) {
       mpc *= 2;
