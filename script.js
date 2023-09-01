@@ -34,13 +34,13 @@ function upgrade1() {
   if (moneys >= upgrade1Cost && upgrade1Amount < 10) {
     upgrade1Amount += 1;
     //adds more to your money per click(mpc)
-    upgrade1mpc = 1.2^upgrade1Amount;
+    upgrade1mpc = 1*1.2^upgrade1Amount;
     mpc += upgrade1mpc;
     //subtracts money from total
     moneys -= upgrade1Cost;
     upgrade1Cost *= 1.5;
     //shows that you got the upgrade
-    upgrade1Amount += 1;
+    mpc += upgrade1mpc;
     //round all of your money
     moneys = Math.round(100*moneys)/100;
     upgrade1Cost = Math.round(10*upgrade1Cost)/10;
