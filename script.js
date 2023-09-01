@@ -37,7 +37,7 @@ function upgrade1() {
     moneys -= upgrade1Cost;
     upgrade1Cost *= 1.5;
     //shows that you got the upgrade
-    mpc += 1*1.2**upgrade1Amount);
+    mpc += 1*1.2**upgrade1Amount;
     //round all of your money
     moneys = Math.round(100*moneys)/100;
     upgrade1Cost = Math.round(100*upgrade1Cost)/100;
