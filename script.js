@@ -2,7 +2,7 @@ let moneys = 0; //sets money to 0
 let mpc = 1; //sets mps to 1
 let prestigeMultipliar = 1;
 let upgradeMax = 10;
-let prestiges = 0;
+let prestigeAmount = 0;
 function clicked() {
   moneys += mpc*prestigeMultipliar; //adds money per click to money
   moneys = Math.round(10*moneys)/10; //rounds money to the nearest 10th
@@ -131,6 +131,9 @@ function prestige() {
     document.getElementById("upgrade2Amount").innerHTML = upgrade2Amount;
     document.getElementById("upgrade1Cost").innerHTML = upgrade1Cost;
     document.getElementById("upgrade1Amount").innerHTML = upgrade1Amount;
+    document.getElementById("prestigeAmount").innerHTML = prestigeAmount;
+    document.getElementById("prestigeMultipliar").innerHTML = prestigeMultipliar;
+    document.getElementsByClassName("upgradeMax").innerHTML = upgradeMax;
   };
 
 };
