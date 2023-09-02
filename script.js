@@ -133,7 +133,10 @@ function prestige() {
     document.getElementById("upgrade1Amount").innerHTML = upgrade1Amount;
     document.getElementById("prestigeAmount").innerHTML = prestigeAmount;
     document.getElementById("prestigeMultipliar").innerHTML = prestigeMultipliar;
-    document.getElementsByClassName("upgradeMax").innerHTML = upgradeMax;
+    document.getElementsById("upgradeMax1").innerHTML = upgradeMax;
+    document.getElementsById("upgradeMax2").innerHTML = upgradeMax;
+    document.getElementsById("upgradeMax1L2").innerHTML = upgradeMax;
+    document.getElementsById("upgradeMax2L2").innerHTML = upgradeMax;
   };
 
 };
