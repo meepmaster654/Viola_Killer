@@ -2,7 +2,6 @@ let moneys = 0; //sets money to 0
 let mpc = 1; //sets mps to 1
 let prestigeMultipliar = 1;
 let upgradeMax = 10;
-let prestigeAmount = 0;
 function clicked() {
   moneys += mpc*prestigeMultipliar; //adds money per click to money
   moneys = Math.round(10*moneys)/10; //rounds money to the nearest 10th
@@ -40,7 +39,7 @@ function upgrade1() {
     //shows that you got the upgrade
     mpc += 1*1.2**upgrade1Amount;
     //max multipliar
-    if (upgrade1Amount % 10 == 0) {
+    if (upgrade1Amount == upgradeMax) {
       mpc *= 2;
     };
     //update the HTML
@@ -54,24 +53,30 @@ function upgrade1() {
 
 //sets upgrade 2 variables
 let upgrade2Cost = 100;
+let upgrade2mps = 1;
 let upgrade2Amount = 0;
 
 //upgrade 2 function
 function upgrade2() {
   //makes sure you can afford the upgrade and that it is not maxed
   if (moneys >= upgrade2Cost && upgrade2Amount < upgradeMax) {
-    upgrade2Amount += 1;
     //subtracts cost from your money & multiplys the cost
     moneys -= upgrade2Cost;
     upgrade2Cost *= 1.5
     //add the upgrade to your money per second
-    mps += 1*1.2**upgrade2Amount;
-    if (upgrade2Amount % 10 == 0) {
+    mps += upgrade2mps;
+    upgrade2mps *= 1.4;
+    upgrade2Amount += 1;
+    upgrade2mps = Math.round(10*upgrade2mps)/10;
+    moneys = Math.round(100*moneys)/100;
+    mps = Math.round(10*mps)/10;
+    if (upgrade2Amount == upgradeMax) {
       mps *= 2;
     };
     document.getElementById("upgrade2Cost").innerHTML = upgrade2Cost;
     document.getElementById("moneyYouHave").innerHTML = moneys;
     document.getElementById("mps").innerHTML = mps;
+    document.getElementById("upgrade2mps").innerHTML = upgrade2mps;
     document.getElementById("upgrade2Amount").innerHTML = upgrade2Amount;
   };
 };
@@ -99,7 +104,7 @@ let upgrade2L2Cost = 10000;
 let upgrade2L2Amount = 0;
 
 function upgrade2L2() {
-  if (moneys >= upgrade1L2Cost && upgrade2Amount >= upgradeMax) {
+  if (moneys >= upgrade1L2Cost && upgrade2Amount >=upgradeMax) {
     mps *= 1.5;
     moneys -= upgrade2L2Cost;
     upgrade2L2Cost *= 1.4;
@@ -119,20 +124,6 @@ function prestige() {
     prestigeMultipliar *= 2;
     upgradeMax *= 2;
     mpc = 1;
-    upgrade1Amount = moneys = mps upgrade2Amount = upgrade1L2Amount = upgrade2L2 = upgrade1Cost = upgrade2Cost = upgrade1L2Cost = upgrade2L2Cost = 0;
-    document.getElementById("mps").innerHTML = mps;
-    document.getElementById("moneyYouHave").innerHTML = moneys;
-    document.getElementById("upgrade2L2Cost").innerHTML = upgrade2L2Cost;
-    document.getElementById("upgrade2L2Amount").innerHTML = upgrade2L2Amount;
-    document.getElementById("mpc").innerHTML = mpc;
-    document.getElementById("upgrade1L2Cost").innerHTML = upgrade1L2Cost;
-    document.getElementById("upgrade1L2Amount").innerHTML = upgrade1L2Amount;
-    document.getElementById("upgrade2Cost").innerHTML = upgrade2Cost;
-    document.getElementById("upgrade2Amount").innerHTML = upgrade2Amount;
-    document.getElementById("upgrade1Cost").innerHTML = upgrade1Cost;
-    document.getElementById("upgrade1Amount").innerHTML = upgrade1Amount;
-    document.getElementById("prestigeAmount").innerHTML = prestigeAmount;
-    document.getElementById("prestigeMultipliar").innerHTML = prestigeMultipliar;
+    upgrade1Amount = moneys = mps upgrade2Amount = upgrade1L2Amount = upgrade2L2 = 0;
   };
-
 };
